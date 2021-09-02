@@ -63,6 +63,7 @@ function sceltaDifficolta(){
 //funzione gameplay
 function gamePlay(){
     tuoNumero = [];
+    score = 0;
     //ciclo in cui l'utente inserisce un numero < 100 e > 1 che se ripetuto interrompe il ciclo
     do{
         let numeroAttuale = parseInt ( prompt("Inserisci un numero da 1 a " + numeroMassimo) );
