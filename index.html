@@ -5,9 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- link js -->
-    <script src="js/myscript.js" defer></script>
-
     <!-- link bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
@@ -23,20 +20,19 @@
                 <h1>Campo Minato</h1>
                 <p>#Istruzioni: Inserisci la difficoltà, successivamente dovrai inserire dei numeri, ma attenzione tra i numeri che sceglierai potrai accidentalmente attivare una bomba e perdere la partita :( <br>Se invece sceglierai correttamente i tuoi numeri senza attivare nessuna bomba allora vincerai la parita :)</p>
                 <div class="d-flex justify-content-center">
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                          Seleziona difficoltà
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                          <li><a class="dropdown-item" value ="0" href="#">Facile</a></li>
-                          <li><a class="dropdown-item" value ="1" href="#">Normale</a></li>
-                          <li><a class="dropdown-item" value ="2" href="#">Difficile</a></li>
-                        </ul>
-                      </div>
+                    <select id="my-selection-difficulty" onchange="sceltaDifficolta()" class="form-select" aria-label="Default select example">
+                        <option selected>Seleziona la difficoltà</option>
+                        <option value="1">Facile</option>
+                        <option value="2">Normale</option>
+                        <option value="3">Difficile</option>
+                    </select>
                     <button type="button" id="my_btn-play" class="btn btn-primary ms-5">Gioca</button>
                 </div>
             </div>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!-- link js -->
+    <script src="js/myscript.js"></script>
 </body>
 </html>

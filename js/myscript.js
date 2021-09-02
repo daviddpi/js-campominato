@@ -7,7 +7,7 @@ function getRandomInt(min, max) {
 
 //funzione che verifica la difficoltà
 function verificaDifficolta(strDifficolta){
-    if( (strDifficolta != "pari") && (strDifficolta != "media") && (strDifficolta != "difficile") ){
+    if( (strDifficolta != "facile") && (strDifficolta != "media") && (strDifficolta != "difficile") ){
         return true;
     }
     return false;
@@ -15,6 +15,7 @@ function verificaDifficolta(strDifficolta){
 
 //funzione genera bombe, che inserisce univocamente in un array un numero random da 1 a x (in base alla difficolta)
 function generaBombe(){
+    bombe = [];
     do{
         let randomNum = getRandomInt(1,numeroMassimo+1)
         if(!(bombe.includes(randomNum))){ //se il numero random non è già nell'array viene inserito
@@ -27,14 +28,22 @@ function generaBombe(){
 }
 
 //funzione scelta della difficoltà
-function sceltaDifficolta(difficolta){
+function sceltaDifficolta(){
+    difficolta = document.getElementById("my-selection-difficulty").value;
+    if(difficolta == "1"){
+        difficolta = "facile";
+    } else if(difficolta == "2"){
+        difficolta = "normale"
+    } else {
+        difficolta = "difficile";
+    }
     //in base alla difficolta cambiano il numero delle bombe e il numero totale che l'utente dovrà inserire
     switch(difficolta){
-        case "pari":
+        case "facile":
             numeroBombe = 2;
             numeroMassimo = 10;
             break;
-        case "media":
+        case "normale":
             numeroBombe = 6;
             numeroMassimo = 25;
             break;
@@ -43,13 +52,15 @@ function sceltaDifficolta(difficolta){
             numeroMassimo = 40;
             break;
         default:
-            numeroBombe = 16;
-            numeroMassimo = 100;
+            numeroBombe = 6;
+            numeroMassimo = 25;
             break;
     }
     return (numeroBombe,numeroMassimo)
 }
 
+
+//funzione gameplay
 function gamePlay(){
     //ciclo in cui l'utente inserisce un numero < 100 e > 1 che se ripetuto interrompe il ciclo
     do{
@@ -83,28 +94,16 @@ function gamePlay(){
 let difficolta;
 let numeroBombe;
 let bombe = [];
-let tuoNumero = [];
-let score = 0;
 let numeroMassimo;
 let livello;
+let tuoNumero = [];
+let score = 0;
 
+let btnPlay = document.getElementById("my_btn-play");
 
-let my_btnPlay = document.getElementById("my_btn-play");
+btnPlay.addEventListener("click",function(){
 
-my_btnPlay.addEventListener("click",function(){
-    //ciclo per scelgliere una difficolta
-    do{
-        difficolta = prompt("Seleziona la difficoltà:\n-pari-\n-media-\n-difficile-");
-        if(difficolta != difficolta.trim().toLowerCase()){
-            difficolta = difficolta.trim().toLowerCase();
-        }
-        if( verificaDifficolta(difficolta) == true ){
-            alert("Devi inserire una difficolta esistente");
-        }
-
-    }while( verificaDifficolta(difficolta) );
-
-    sceltaDifficolta(difficolta);
+    sceltaDifficolta();
     console.log(difficolta);
 
     generaBombe();
@@ -115,4 +114,3 @@ my_btnPlay.addEventListener("click",function(){
 
     gamePlay();
 });
-

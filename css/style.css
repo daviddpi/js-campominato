@@ -1,12 +1,10 @@
 body{
-    background-image: url(../img/background-tree-garden.jpg);
+    background-image: url(../img/1655748.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .row{
-    height: 100%;
-    /* width: 50%; */
     margin: 0 auto;
 }
 
@@ -15,6 +13,7 @@ body{
     border-radius: 15px;
     margin-top: 70px;
     padding: 20px;
+    width: 50%;
 }
 
 #my_btn-play{
