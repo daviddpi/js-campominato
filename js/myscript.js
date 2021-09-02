@@ -66,7 +66,7 @@ function gamePlay(){
     score = 0;
     //ciclo in cui l'utente inserisce un numero < 100 e > 1 che se ripetuto interrompe il ciclo
     do{
-        let numeroAttuale = parseInt ( prompt("Inserisci un numero da 1 a " + numeroMassimo) );
+        let numeroAttuale = parseInt ( prompt("Inserisci " + (livello-tuoNumero.length) +" numeri da 1 a " + numeroMassimo) );
         if(numeroAttuale < 1 || numeroAttuale > numeroMassimo || Number.isNaN(numeroAttuale)){
             alert("Devi inserire un numero da 1 a " + numeroMassimo +"!");
         } else if(tuoNumero.includes(numeroAttuale)){ //numero già inserito in precedenza
