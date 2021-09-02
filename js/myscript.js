@@ -40,20 +40,20 @@ function sceltaDifficolta(){
     //in base alla difficolta cambiano il numero delle bombe e il numero totale che l'utente dovrà inserire
     switch(difficolta){
         case "facile":
-            numeroBombe = 2;
+            numeroBombe = 1;
             numeroMassimo = 10;
             break;
         case "normale":
-            numeroBombe = 6;
-            numeroMassimo = 25;
+            numeroBombe = 3;
+            numeroMassimo = 15;
             break;
         case "difficile":
-            numeroBombe = 10;
-            numeroMassimo = 40;
+            numeroBombe = 5;
+            numeroMassimo = 20;
             break;
         default:
-            numeroBombe = 6;
-            numeroMassimo = 25;
+            numeroBombe = 3;
+            numeroMassimo = 15;
             break;
     }
     return (numeroBombe,numeroMassimo)
