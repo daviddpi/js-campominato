@@ -5,14 +5,6 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min) + min); //Massimo escluso, minimo incluso
 }
 
-//funzione che verifica la difficoltà
-function verificaDifficolta(strDifficolta){
-    if( (strDifficolta != "facile") && (strDifficolta != "media") && (strDifficolta != "difficile") ){
-        return true;
-    }
-    return false;
-}
-
 //funzione genera bombe, che inserisce univocamente in un array un numero random da 1 a x (in base alla difficolta)
 function generaBombe(){
     bombe = [];
@@ -30,24 +22,17 @@ function generaBombe(){
 //funzione scelta della difficoltà
 function sceltaDifficolta(){
     difficolta = document.getElementById("my-selection-difficulty").value;
-    if(difficolta == "1"){
-        difficolta = "facile";
-    } else if(difficolta == "2"){
-        difficolta = "normale"
-    } else {
-        difficolta = "difficile";
-    }
     //in base alla difficolta cambiano il numero delle bombe e il numero totale che l'utente dovrà inserire
     switch(difficolta){
-        case "facile":
+        case "1": //facile
             numeroBombe = 1;
             numeroMassimo = 10;
             break;
-        case "normale":
+        case "2": // normale
             numeroBombe = 3;
             numeroMassimo = 15;
             break;
-        case "difficile":
+        case "3": //difficile
             numeroBombe = 5;
             numeroMassimo = 20;
             break;
