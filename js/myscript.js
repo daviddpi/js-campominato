@@ -27,14 +27,21 @@ function sceltaDifficolta(){
         case "1": //facile
             numeroBombe = 1;
             numeroMassimo = 10;
+            document.getElementById("errore-difficolta").className = "d-none";
             break;
         case "2": // normale
             numeroBombe = 3;
             numeroMassimo = 15;
+            document.getElementById("errore-difficolta").className = "d-none";
             break;
         case "3": //difficile
             numeroBombe = 5;
             numeroMassimo = 20;
+            document.getElementById("errore-difficolta").className = "d-none";
+            break;
+        case "0": //errore, selezionare una difficolta
+            document.getElementById("errore-difficolta").className = "text-danger text-start pt-2";
+            tuoNumero.length = livello;
             break;
         default:
             numeroBombe = 3;

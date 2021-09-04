@@ -21,13 +21,15 @@
                 <p>#Istruzioni: Inserisci la difficoltà, successivamente dovrai inserire dei numeri, ma attenzione tra i numeri che sceglierai potrai accidentalmente attivare una bomba e perdere la partita :( <br>Se invece sceglierai correttamente i tuoi numeri senza attivare nessuna bomba allora vincerai la parita :)</p>
                 <div class="d-flex justify-content-center">
                     <select id="my-selection-difficulty" onchange="sceltaDifficolta()" class="form-select" aria-label="Default select example">
-                        <option selected>Seleziona la difficoltà</option>
+                        <option value="0" selected>Seleziona la difficoltà</option>
                         <option value="1">Facile</option>
                         <option value="2">Normale</option>
                         <option value="3">Difficile</option>
                     </select>
                     <button type="button" id="my_btn-play" class="btn btn-primary ms-5">Gioca</button>
                 </div>
+                <p id="errore-difficolta" class="d-none">&cross; Seleziona una difficoltà prima di andare avanti</p>
+
             </div>
         </div>
     </div>
